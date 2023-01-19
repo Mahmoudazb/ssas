@@ -1,0 +1,23 @@
+--1)Write DMX to Dispaly Sales QTY Measure.
+select [Measures].[Qty] on columns
+from [Sales]
+
+--2)Write DMX to Dispaly Sales Qty and Qty Total price Measures.
+select {[Measures].[Qty Total Price] ,[Measures].[Qty]}on columns
+from [Sales]
+
+--3)Write DMX to Dispaly all Measures in Sales Cube
+select [Measures].ALLMembers on columns
+from [Sales]
+
+--4)Write DMX to Display Qty per Customer with the Total Qty
+select [Measures].[Qty] on columns,
+[Customer Dim].[Customer Name].ALLMembers on rows
+from [Sales]
+--5)Write DMX to Display Qty per Customer without the Total Qty
+--6)Write DMX to Display Qty and Number of orders per Customer in Year(2007)
+--7)Write DMX to Display Qty per year for Customer1
+--8)Write DMX to Display Qty per customer for each product
+--9)Write DMX to Display Qty per customer for each product in each year
+--10) Write DMX to Display Qty of products which customer1 buy it form product1 in 2007
+--12) Write DMX to Display Qty per year for each channel 
